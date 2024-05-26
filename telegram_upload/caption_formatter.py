@@ -338,7 +338,7 @@ class CaptionFormatter(Formatter):
     def format(self, __format_string: LiteralString, *args: LiteralString, **kwargs: LiteralString) -> LiteralString:
         try:
             # Replace {newline} with a newline character
-            __format_string = __format_string.replace('>newline<', '\n')
+            __format_string = __format_string.replace('(newline)', '\n')
             return super().format(__format_string, *args, **kwargs)
         except ValueError:
             return __format_string
