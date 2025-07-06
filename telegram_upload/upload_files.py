@@ -148,7 +148,8 @@ class File(FileIO):
         self.path = path
         self.force_file = self.force_file if force_file is None else force_file
         self._thumbnail = thumbnail
-        self._caption = caption
+        # self._caption = caption
+        self._caption = caption.encode('utf-8').decode('utf-8')
 
     @property
     def file_name(self):
